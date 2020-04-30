@@ -7,3 +7,4 @@ class ZenoItem(models.Model):
   timestamp = models.CharField(max_length=100, null=True, blank=True)
   temperature = models.FloatField(null=True, blank=True)
   duration = models.CharField(max_length=250, null=True, blank=True)
+  url = models.CharField(max_length=256, null=True, blank=True)

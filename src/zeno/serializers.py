@@ -5,4 +5,4 @@ class ZenoItemSerializer(serializers.HyperlinkedModelSerializer):
   url = serializers.ReadOnlyField()
   class Meta:
     model = ZenoItem
-    fields = ('timestamp', 'temperature', 'duration')
+    fields = ('zenoid', 'timestamp', 'temperature', 'duration', 'url')
