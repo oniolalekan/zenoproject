@@ -3,11 +3,12 @@ MAINTAINER ONI OLALEKAN <olalekan.joseph@gmail.com>
 
 # Install dev/build dependencies
 RUN apt-get update && \
-    apt-get install -qy python-dev libmysqlclient-dev
+    apt-get install python3-dev build-essential -qy libmysqlclient-dev
 
 # Activate virtual environment and install wheel support
-RUN . /appenv/bin/activate && \
+RUN . /opt/venv/bin/activate && \
     pip install wheel --upgrade
+
 
 # PIP environment variables (NOTE: must be set after installing wheel)
 ENV WHEELHOUSE=/wheelhouse PIP_WHEEL_DIR=/wheelhouse PIP_FIND_LINKS=/wheelhouse XDG_CACHE_HOME=/cache
@@ -29,3 +30,6 @@ CMD ["python", "manage.py", "test", "--noinput"]
 # Add application source
 COPY src /application
 WORKDIR /application
+
+# docker build -t zenobackend-dev -f docker/dev/Dockerfile .
+#docker run --rm zenobackend-dev

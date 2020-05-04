@@ -17,7 +17,7 @@ class ZenoItemViewSet(viewsets.ModelViewSet):
     instance.url = reverse('zenoitem-detail', args=[instance.pk], request=self.request)
     instance.save()
 
-  # Deletes all todo items
+  # Deletes all zeno items
   def delete(self, request):
     ZenoItem.objects.all().delete()
     return Response(status=status.HTTP_204_NO_CONTENT) 

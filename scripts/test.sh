@@ -1,6 +1,7 @@
 #!/bin/bash
 # Activate virtual environment
-. /appenv/bin/activate
+#python3 -m virtualenv --python=/usr/bin/python3 /opt/venv
+. /opt/venv/bin/activate
 
 # Download requirements to build cache
 pip download -d /build -r requirements_test.txt --no-input
