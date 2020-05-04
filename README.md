@@ -8,5 +8,5 @@ and do pip install the dependencies.
 
 Activate the virtual environment. On Windows: change the directory to 'src' and run 'workon virtualenvNAME'
 
-Start the server by running: python manage.py runserver 7000 --settings=zenobackend.settings.test
+Start the server by running: "python manage.py runserver 7000 --settings=zenobackend.settings.test"
 The endpoints are exposed on port 7000.
